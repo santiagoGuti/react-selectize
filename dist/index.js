@@ -1458,7 +1458,7 @@
           target: newProps.target()
         }, newProps.options));
         render(newProps.children, this.node, function(){
-          return  this$.tether ? this$.tether.position() : null;
+          return this$.tether ? this$.tether.position() : null;
         });
       }
     };

@@ -22,11 +22,11 @@ class ReactTether extends React.PureComponent
             element: @node
             target: props.target!
         } <<< props.options
-        render props.children, @node, ~> @tether.position!
+        render props.children, @node, ~> @tether.position! if @tether.position
 
     # destroy-tether :: () -> Void
     destroy-tether: !->
-        
+
         # destroy tether instance
         if @tether
             @tether.destroy!
@@ -40,7 +40,7 @@ class ReactTether extends React.PureComponent
         @node = @tether = undefined
 
     # component-did-mount :: () -> Void
-    component-did-mount: !-> 
+    component-did-mount: !->
         if @props.children
             @init-tether @props
 
@@ -53,11 +53,11 @@ class ReactTether extends React.PureComponent
             @init-tether new-props
 
         else if new-props.children
-            @tether.set-options { 
+            @tether.set-options {
                 element: @node
                 target: new-props.target!
             } <<< new-props.options
-            render new-props.children, @node, ~> @tether.position!
+            render new-props.children, @node, ~> @tether.position! if @tether.position
 
     # component-will-unmount :: () -> Void
     component-will-unmount: !-> @destroy-tether!
