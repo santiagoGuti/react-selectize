@@ -3,6 +3,7 @@ npm-debug.log
 rough
 *.gif
 *.ls
+*.js
 *.styl
 *.sublime-project
 *.sublime-workspace

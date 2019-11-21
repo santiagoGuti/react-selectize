@@ -2,7 +2,6 @@ rough
 .DS_Store
 config.ls
 npm-debug.log
-*.sublime-workspace
 *.rdb
 coverage/
 node_modules/
